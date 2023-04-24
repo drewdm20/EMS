@@ -5,6 +5,7 @@
 .card {
     background-color: #BADFE7;
     margin: 0 auto;
+    margin-bottom: 5%;
 }
 
   input {
@@ -17,7 +18,7 @@
     border-radius:10px;
   }
 
-  button {
+  .btn {
     margin-top: 30px;
     padding-top: 50px;
     padding: 2.2% 5.5%;
@@ -31,8 +32,13 @@
     background-color: #6FB3B8;
   }
 
-  h2{
-    padding-bottom: 30px;
+  #update{
+    margin-right: 3rem;
   }
+
+  .heading{
+    padding: 60px;
+    margin-top: 5%;
+}
 
   
