@@ -22,4 +22,6 @@ body{
 .btn{
     background-color: #6FB3B8;
     border: 1.5px solid black;
+    width: 25%;
+    margin: 0 auto;
 }

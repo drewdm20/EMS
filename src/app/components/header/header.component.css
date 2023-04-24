@@ -21,11 +21,12 @@ ul a{
     flex:1;
     text-decoration: none;
     color: white;
-    padding: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 #add{
-    border-right: 1.5px solid white;
+    border-right: 1px solid white;
 }
 
 .btn{

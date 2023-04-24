@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-employee',
@@ -7,4 +8,16 @@ import { Component } from '@angular/core';
 })
 export class AddEmployeeComponent {
 
+  ngOnInit(): void {
+    
+  }
+
+
+  add(){
+    Swal.fire(
+      'The Internet?',
+      'That thing is still around?',
+      'question'
+    )
+  }
 }
