@@ -15,9 +15,9 @@ export class AddEmployeeComponent {
 
   add(){
     Swal.fire(
-      'The Internet?',
-      'That thing is still around?',
-      'question'
+      'Success',
+      'Employee Successfully Added',
+      'success'
     )
   }
 }
