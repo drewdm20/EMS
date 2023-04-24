@@ -1,18 +1,11 @@
-body{
+.body{
     text-align: center;
   }
-div {
+
+.card {
     background-color: #BADFE7;
-    text-align: center;
+    margin: 0 auto;
 }
-card {
-    background-color: #BADFE7;
-}
-.container {
-    width: 800px;
-    margin: 10px auto;
-    text-align: center;
-  }
 
   input {
     width: 100%;
