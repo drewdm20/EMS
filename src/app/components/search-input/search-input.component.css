@@ -1,11 +1,11 @@
 form {
-    width: 80%;
+    width: 40%;
     float: center;
     display: flex;
 }
 
 form input[type="text"] {
-    
+    width: 5rem;
 }
 
 form button {
