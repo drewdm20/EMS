@@ -1,12 +1,15 @@
 .footer {
     background-color: #388087;
     text-align: center;
-    position: fixed;
+    /* position: fixed; */
     bottom: 0;
     width: 100%;
     height: 3rem;
-    padding-top: 0.75rem;
+    margin-top: 50px;
+    margin-bottom: 0;
+    padding-top: 16px;
 }
+
  small {
     color: white;
     margin-top: 4rem;

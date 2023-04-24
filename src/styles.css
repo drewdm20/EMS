@@ -1,6 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
 
+body{
+    background-color: #F6F6F2;
+    height: 100%;
+}
+
 * {
     box-sizing: border-box;
     padding: 0;
