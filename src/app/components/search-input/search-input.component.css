@@ -1,0 +1,15 @@
+form {
+    width: 80%;
+    float: center;
+    display: flex;
+}
+
+form input[type="text"] {
+    
+}
+
+form button {
+    margin-left: 0.75rem;
+    width: 8rem;
+    height: 2.5rem;
+}
