@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { DetailsCardComponent } from './components/details-card/details-card.component';
 import { AddEmployeeComponent } from './pages/add-employee/add-employee.component';
 import { EmployeeTableComponent } from './components/employee-table/employee-table.component';
 import { SearchInputComponent } from './components/search-input/search-input.component';
@@ -17,6 +18,7 @@ import { MainHeadingComponent } from './components/main-heading/main-heading.com
     AppComponent,
     HeaderComponent,
     FooterComponent,
+    DetailsCardComponent,
     AddEmployeeComponent,
     EmployeeTableComponent,
     SearchInputComponent,
