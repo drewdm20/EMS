@@ -6,22 +6,22 @@
      <div class="card-body">       
       <form>
         <label>Name</label><br>
-        <input type="text" name="Name" required placeholder="John"><br><br>
+        <input type="text" name="Name" [(ngModel)]="name" required value="{{this.name}}"><br><br>
 
         <label>Last Name</label><br>
-        <input type="text" name="lastName" required placeholder="Wick"><br><br>
+        <input type="text" name="lastName" [(ngModel)]="lastName" required value="{{this.lastName}}"><br><br>
 
         <label>Cell Number</label><br>
-        <input type="text" name="cellNumber" required placeholder="076 554 5531"><br><br>
+        <input type="text" name="cellNumber" [(ngModel)]="cellNumber" required value="{{this.cellNumber}}"><br><br>
 
         <label>Email</label><br>
-        <input type="text" name="email" required placeholder="jw@assasination.com"><br><br>
+        <input type="text" name="email" [(ngModel)]="email" required value="{{this.email}}"><br><br>
 
         <label>Role</label><br>
-        <input type="text" name="role" required placeholder="Assasian"><br><br>
+        <input type="text" name="role" [(ngModel)]="role" required value="{{this.role}}"><br><br>
 
         <label>Salary</label><br>
-        <input type="text" name="salary" required placeholder="R1"><br><br>
+        <input type="text" name="salary" [(ngModel)]="salary" required value="{{this.salary}}"><br><br>
 
       </form><br>
       <button class="btn" type="submit" id="update" (click)="update()">Update</button>

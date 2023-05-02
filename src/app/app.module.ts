@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +15,7 @@ import { SearchInputComponent } from './components/search-input/search-input.com
 import { SearchButtonComponent } from './components/search-button/search-button.component';
 import { HomeComponent } from './pages/home/home.component';
 import { MainHeadingComponent } from './components/main-heading/main-heading.component';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
@@ -26,11 +29,14 @@ import { MainHeadingComponent } from './components/main-heading/main-heading.com
     SearchInputComponent,
     SearchButtonComponent,
     HomeComponent,
-    MainHeadingComponent
+    MainHeadingComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

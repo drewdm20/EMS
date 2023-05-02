@@ -10,15 +10,15 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <th scope="row">123</th>
-            <td>Drew</td>
-            <td>McKop</td>
-            <td>Software ENG</td>
+        <tr *ngFor="let dataItem of EMP | filter: searchString">
+            <td>{{dataItem.empId}}</td>
+            <td>{{dataItem.empName}}</td>
+            <td>{{dataItem.empLastName}}</td>
+            <td>{{dataItem.role}}</td>
             <td>
-                <button type="submit" class="btn btn-primary mx-2" routerLink="details">Details</button>
-                <button type="submit" class="btn btn-secondary mx-2" routerLink="update">Edit</button>
-                <button type="submit" class="btn btn-danger mx-2" (click)="delete()">Delete</button>
+                <button type="submit" class="btn btn-primary mx-2" routerLink="details" (click)="setId(dataItem.empId)">Details</button>
+                <button type="submit" class="btn btn-secondary mx-2" routerLink="update" (click)="setId(dataItem.empId)">Edit</button>
+                <button type="submit" class="btn btn-danger mx-2" (click)="delete(dataItem.empId)">Delete</button>
             </td>
         </tr>
         </tbody>
