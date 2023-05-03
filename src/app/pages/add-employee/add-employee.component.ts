@@ -14,23 +14,28 @@ export class AddEmployeeComponent {
 
   constructor(private service: EmployeeService, private router : Router ) { }
 
-  // headers = new Headers();
-  // this.headers.append('Content-Type','application/json');
-
   addForm = new FormGroup({
     empName: new FormControl('', Validators.required),
     empLastName: new FormControl('', Validators.required),
     cellNumber: new FormControl('', Validators.required),
-    email: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
     role: new FormControl('', Validators.required),
-    salary: new FormControl( Validators.required),
+    salary: new FormControl('', Validators.required),
   });
 
-  add(){
-    console.warn(this.addForm.value);
-    this.service.add(this.addForm.value).subscribe(res =>{
-      this.addValid();
-    })
+  async add(){
+    
+    try {
+      this.service.add(this.addForm.value).subscribe(res =>{
+        console.warn(this.addForm.value);  
+      })
+
+    this.addValid();
+
+    } catch (err) {
+      console.log(err);
+    }
+   
   }
 
   addValid(){
@@ -39,5 +44,6 @@ export class AddEmployeeComponent {
       'Employee Successfully Added',
       'success'
     )
+    this.router.navigateByUrl('')
   }
 }

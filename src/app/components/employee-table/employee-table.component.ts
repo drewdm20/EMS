@@ -42,11 +42,20 @@ export class EmployeeTableComponent implements OnInit{
       if (result.isConfirmed) {
         this.service.deleteData(id).subscribe(data=>{
         })
-        Swal.fire(
-          'Deleted!',
-          'Your file has been deleted.',
-          'success'
-        )
+
+
+        Swal.fire({
+          title: 'Deleted',
+          text: "Your file has been deleted",
+          icon: 'success',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            location.reload()
+          }
+        })
+
+
+
       }
     })
   }

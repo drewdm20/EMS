@@ -5,6 +5,7 @@ import { employee } from 'src/app/models/employee';
 import { EmployeeService } from 'src/app/Services/employee.service';
 import {FormGroup,FormControl } from '@angular/forms';
 import { Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-update',
@@ -14,7 +15,7 @@ import { Validators } from '@angular/forms';
 export class UpdateComponent {
 
 
-  constructor(private service: EmployeeService, ) { }
+  constructor(private service: EmployeeService, private router : Router  ) { }
 
   name! : String
   lastName! : String
@@ -38,11 +39,19 @@ export class UpdateComponent {
     salary: new FormControl(this.salary, Validators.required),
   });
 
-  update(){
-    console.warn(this.updateForm.value);
-    this.service.updateData((this.updateForm.value), this.ID).subscribe(res =>{
-      this.updateValid()
-    })
+  async update(){
+    
+    try {
+      this.service.updateData((this.updateForm.value), this.ID).subscribe(res =>{
+        
+      })
+
+    this.updateValid()
+
+    } catch (err) {
+      console.log(err);
+    }
+   
   }
 
   getData(){
@@ -63,6 +72,7 @@ export class UpdateComponent {
       'Employee Successfully Updated',
       'success'
     )
+    this.router.navigateByUrl('')
   }
 
 }
