@@ -41,7 +41,7 @@ export class UpdateComponent {
   update(){
     console.warn(this.updateForm.value);
     this.service.updateData((this.updateForm.value), this.ID).subscribe(res =>{
-      
+      this.updateValid()
     })
   }
 

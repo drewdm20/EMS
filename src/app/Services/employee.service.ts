@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable} from 'rxjs';
+import { HttpClient, HttpParams,HttpHeaders } from '@angular/common/http';
+import { Observable, map} from 'rxjs';
 import { employee } from '../models/employee';
 
 @Injectable({
@@ -28,5 +28,22 @@ export class EmployeeService {
 
   public deleteData(id:any){
     return this.http.delete("http://localhost:8080/employee/deleteEmployee/" + id);
+  }
+
+  public add( body: any):
+    Observable<any> {
+
+    let headers = new HttpHeaders()
+    .set('Content-Type','application/json');
+
+    return this.http.post<string>("http://localhost:8080/employee/addEmployee", body, {'headers':headers}).pipe(
+      map(response => {
+        if (response !== '') {
+          return JSON.parse(response);
+        } else {
+          return {}
+        }
+      })
+    );
   }
 }

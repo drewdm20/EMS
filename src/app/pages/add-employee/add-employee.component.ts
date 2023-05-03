@@ -26,13 +26,9 @@ export class AddEmployeeComponent {
     salary: new FormControl( Validators.required),
   });
 
-  ngOnInit(): void {
-    
-  }
-
   add(){
     console.warn(this.addForm.value);
-    this.service.addData(this.addForm.value).subscribe(res =>{
+    this.service.add(this.addForm.value).subscribe(res =>{
       this.addValid();
     })
   }
