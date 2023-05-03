@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams,HttpHeaders } from '@angular/common/http';
 import { Observable, map} from 'rxjs';
-import { employee } from '../models/employee';
 
 @Injectable({
   providedIn: 'root'
@@ -10,40 +9,25 @@ export class EmployeeService {
 
   constructor(private http:HttpClient) { }
 
+  URL = "http://localhost:8080/employee/"
+
   public getData(): Observable < any [] >{
-    return this.http.get< any >("http://localhost:8080/employee/getEmployees");
+    return this.http.get< any >(this.URL + "getEmployees");
   }
 
   public getIData(id:any): Observable < any [] >{
-    return this.http.get< any >(`http://localhost:8080/employee/getEmployee/${id}`);
+    return this.http.get< any >(this.URL + `getEmployee/${id}`);
   }
 
   public addData(val:any): Observable<any> {
-    return this.http.post("http://localhost:8080/employee/addEmployee", val);
+    return this.http.post(this.URL + "addEmployee", val);
   }
 
   public updateData(val:any, id:any){
-    return this.http.put("http://localhost:8080/employee/updateEmployee/" + id, val);
+    return this.http.put(this.URL + "updateEmployee/" + id, val);
   }
 
   public deleteData(id:any){
-    return this.http.delete("http://localhost:8080/employee/deleteEmployee/" + id);
-  }
-
-  public add( body: any):
-    Observable<any> {
-
-    let headers = new HttpHeaders()
-    .set('Content-Type','application/json');
-
-    return this.http.post<string>("http://localhost:8080/employee/addEmployee", body, {'headers':headers}).pipe(
-      map(response => {
-        if (response !== '') {
-          return JSON.parse(response);
-        } else {
-          return {}
-        }
-      })
-    );
+    return this.http.delete(this.URL + "deleteEmployee/" + id);
   }
 }

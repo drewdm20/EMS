@@ -26,7 +26,7 @@ export class AddEmployeeComponent {
   async add(){
     
     try {
-      this.service.add(this.addForm.value).subscribe(res =>{
+      this.service.addData(this.addForm.value).subscribe(res =>{
         console.warn(this.addForm.value);  
       })
 

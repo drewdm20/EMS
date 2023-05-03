@@ -50,7 +50,7 @@ export class EmployeeTableComponent implements OnInit{
           icon: 'success',
         }).then((result) => {
           if (result.isConfirmed) {
-            location.reload()
+            location.reload( )
           }
         })
 
