@@ -18,7 +18,7 @@ export class EmployeeService {
     return this.http.get< any >(`http://localhost:8080/employee/getEmployee/${id}`);
   }
 
-  public addData(val:employee): Observable<any> {
+  public addData(val:any): Observable<any> {
     return this.http.post("http://localhost:8080/employee/addEmployee", val);
   }
 

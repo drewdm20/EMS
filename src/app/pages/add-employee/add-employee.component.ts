@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import Swal from 'sweetalert2';
 import { EmployeeService } from 'src/app/Services/employee.service';
 import { Router } from '@angular/router';
+import {FormGroup,FormControl } from '@angular/forms';
+import { Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-employee',
@@ -12,27 +14,26 @@ export class AddEmployeeComponent {
 
   constructor(private service: EmployeeService, private router : Router ) { }
 
-  name! : String
-  lastName! : String
-  cellNumber! : String
-  email! : String
-  role! : String
-  salary! : number
+  // headers = new Headers();
+  // this.headers.append('Content-Type','application/json');
+
+  addForm = new FormGroup({
+    empName: new FormControl('', Validators.required),
+    empLastName: new FormControl('', Validators.required),
+    cellNumber: new FormControl('', Validators.required),
+    email: new FormControl('', Validators.required),
+    role: new FormControl('', Validators.required),
+    salary: new FormControl( Validators.required),
+  });
 
   ngOnInit(): void {
     
   }
 
   add(){
-    var val = 
-     {empName:this.name,
-      empLastName: this.lastName,
-      cellNumber:this.cellNumber,
-      email:this.email,
-      role:this.role,
-      salary:Number(this.salary)}
-  
-    this.service.addData(val).subscribe(res =>{
+    console.warn(this.addForm.value);
+    this.service.addData(this.addForm.value).subscribe(res =>{
+      this.addValid();
     })
   }
 

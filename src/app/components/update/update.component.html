@@ -4,24 +4,24 @@
 </h1>
  <div class="card" >
      <div class="card-body">       
-      <form>
+      <form [formGroup]="updateForm">
         <label>Name</label><br>
-        <input type="text" name="Name" [(ngModel)]="name" required value="{{this.name}}"><br><br>
+        <input formControlName="empName" type="text" name="Name" [(ngModel)]="name" required value="{{this.name}}"><br><br>
 
         <label>Last Name</label><br>
-        <input type="text" name="lastName" [(ngModel)]="lastName" required value="{{this.lastName}}"><br><br>
+        <input formControlName="empLastName" type="text" name="lastName" [(ngModel)]="lastName" required value="{{this.lastName}}"><br><br>
 
         <label>Cell Number</label><br>
-        <input type="text" name="cellNumber" [(ngModel)]="cellNumber" required value="{{this.cellNumber}}"><br><br>
+        <input formControlName="cellNumber" type="text" name="cellNumber" [(ngModel)]="cellNumber" required value="{{this.cellNumber}}"><br><br>
 
         <label>Email</label><br>
-        <input type="text" name="email" [(ngModel)]="email" required value="{{this.email}}"><br><br>
+        <input formControlName="email" type="text" name="email" [(ngModel)]="email" required value="{{this.email}}"><br><br>
 
         <label>Role</label><br>
-        <input type="text" name="role" [(ngModel)]="role" required value="{{this.role}}"><br><br>
+        <input formControlName="role" type="text" name="role" [(ngModel)]="role" required value="{{this.role}}"><br><br>
 
         <label>Salary</label><br>
-        <input type="text" name="salary" [(ngModel)]="salary" required value="{{this.salary}}"><br><br>
+        <input formControlName="salary" type="text" name="salary" [(ngModel)]="salary" required value="{{this.salary}}"><br><br>
 
       </form><br>
       <button class="btn" type="submit" id="update" (click)="update()">Update</button>

@@ -2,3 +2,8 @@ table {
     margin: 4rem auto;
     width: 80%;
 }
+
+input[type="search"] {
+    margin: 0 auto;
+    width: 30%
+}

@@ -3,27 +3,27 @@
         Add New Employee
     </h1>
     <div class="card">
-        <form action="">
+        <form [formGroup]="addForm" >
             <label for="fname">Name</label><br>
-            <input type="text" id="fname" name="fname" value="" [(ngModel)]="name" ><br><br>
+            <input formControlName="empName" type="text" id="fname" name="fname" ><br><br>
 
             <label for="lname">Last Name</label><br>
-            <input type="text" id="lname" name="lname"  value="" [(ngModel)]="lastName" ><br><br>
+            <input formControlName="empLastName" type="text" id="lname" name="lname" ><br><br>
 
             <label for="fname">Cell Number</label><br>
-            <input type="text" id="fname" name="fname"  value="" [(ngModel)]="cellNumber" ><br><br>
+            <input formControlName="cellNumber" type="text" id="fname" name="fname" ><br><br>
 
             <label for="lname">Email</label><br>
-            <input type="text" id="lname" name="lname"  value="" [(ngModel)]="email" ><br><br>
+            <input formControlName="email" type="text" id="lname" name="lname" ><br><br>
 
             <label for="fname">Role</label><br>
-            <input type="text" id="fname" name="fname"  value="" [(ngModel)]="role" ><br><br>
+            <input formControlName="role" type="text" id="fname" name="fname" ><br><br>
 
             <label for="lname">Salary</label><br>
-            <input type="text" id="lname" name="lname"  value="" [(ngModel)]="salary" ><br><br>
+            <input formControlName="salary" type="number" id="lname" name="lname" ><br><br>
 
             
         </form>
-        <button class="btn btn-primary" (click)="add()">Add</button>
+        <button class="btn btn-primary" (click)="add()" [disabled]="!addForm.valid">Add</button>
     </div>
 </body>
