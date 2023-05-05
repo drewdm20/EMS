@@ -2,28 +2,31 @@
 
     <input class="form-control mr-sm-2 mb-3" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchString">
 
-    <table class="table table-striped ">
-        <thead>
-        <tr>
-            <th scope="col">Employee ID</th>
-            <th scope="col">Name</th>
-            <th scope="col">Last Name</th>
-            <th scope="col">Role</th>
-            <th scope="col">Actions</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let dataItem of EMP | filter: searchString">
-            <td>{{dataItem.empId}}</td>
-            <td>{{dataItem.empName}}</td>
-            <td>{{dataItem.empLastName}}</td>
-            <td>{{dataItem.role}}</td>
-            <td>
-                <button type="submit" class="btn btn-primary mx-2" routerLink="details" (click)="setId(dataItem.empId)">Details</button>
-                <button type="submit" class="btn btn-secondary mx-2" routerLink="update" (click)="setId(dataItem.empId)">Edit</button>
-                <button type="submit" class="btn btn-danger mx-2" (click)="delete(dataItem.empId)">Delete</button>
-            </td>
-        </tr>
-        </tbody>
-    </table>
+    <div class="card">
+        <table class="table table-striped ">
+            <thead>
+            <tr>
+                <th scope="col">Employee ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Role</th>
+                <th scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let dataItem of EMP | filter: searchString">
+                <td>{{dataItem.empId}}</td>
+                <td>{{dataItem.empName}}</td>
+                <td>{{dataItem.empLastName}}</td>
+                <td>{{dataItem.role}}</td>
+                <td>
+                    <button type="submit" class="btn btn-primary mx-2" routerLink="details" (click)="setId(dataItem.empId)">Details</button>
+                    <button type="submit" class="btn btn-secondary mx-2" routerLink="update" (click)="setId(dataItem.empId)">Edit</button>
+                    <button type="submit" class="btn btn-danger mx-2" (click)="delete(dataItem.empId)">Delete</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+   
 </div>
