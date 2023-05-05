@@ -12,3 +12,9 @@ input[type="search"] {
 .card{
     margin-top: 3%;
 }
+
+.info{
+    text-align: center;
+    padding: 30px;
+}
+

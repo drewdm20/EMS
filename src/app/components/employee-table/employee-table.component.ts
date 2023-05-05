@@ -14,6 +14,7 @@ export class EmployeeTableComponent implements OnInit{
 
   EMP: employeeId[] | undefined;
   public searchString: any;
+  bool = true
 
   ngOnInit(): void {
     this.getEmployees()
@@ -23,9 +24,12 @@ export class EmployeeTableComponent implements OnInit{
   getEmployees(){
     this.EMP = [];
     this.service.getData().subscribe(data=>{
-      
       this.EMP = data;
-      console.log(this.EMP)
+      if(this.EMP.length == 0){
+        this.bool = false
+      }else{
+        this.bool = true
+      }
     }) 
   }
 

@@ -34,7 +34,7 @@ export class UpdateComponent {
     empName: new FormControl(this.name, Validators.required),
     empLastName: new FormControl(this.lastName, Validators.required),
     cellNumber: new FormControl(this.cellNumber, Validators.required),
-    email: new FormControl(this.email, Validators.required),
+    email: new FormControl(this.email, [Validators.required, Validators.email]),
     role: new FormControl(this.role, Validators.required),
     salary: new FormControl(this.salary, Validators.required),
   });

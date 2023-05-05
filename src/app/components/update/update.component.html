@@ -24,7 +24,7 @@
         <input formControlName="salary" type="number" name="salary" [(ngModel)]="salary" required value="{{this.salary}}" min="0"><br><br>
 
       </form><br>
-      <button class="btn" type="submit" id="update" (click)="update()">Update</button>
+      <button class="btn" type="submit" id="update" (click)="update()" [disabled]="!updateForm.valid">Update</button>
       <button class="btn" type="submit" id="back" routerLink="/">Back</button>
     </div>
 </div>

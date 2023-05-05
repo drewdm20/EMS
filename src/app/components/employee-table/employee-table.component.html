@@ -3,7 +3,7 @@
     <input class="form-control mr-sm-2 mb-3" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchString">
 
     <div class="card">
-        <table class="table table-striped ">
+        <table class="table table-striped " *ngIf="this.bool == true">
             <thead>
             <tr>
                 <th scope="col">Employee ID</th>
@@ -27,6 +27,13 @@
             </tr>
             </tbody>
         </table>
+    </div>
+
+    <div class="card" *ngIf="this.bool == false">
+        <div class="info">
+            <h2>No employees on the system</h2>
+        <p>Please add an employee</p>
+        </div>
     </div>
    
 </div>
