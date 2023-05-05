@@ -30,3 +30,13 @@ body {
   width: 25%;
   margin: 0 auto;
 }
+
+.type{
+  float: left;
+  padding-left: 50px;
+}
+
+.info{
+  padding-left: 10px;
+}
+
