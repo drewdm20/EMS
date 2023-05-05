@@ -41,7 +41,7 @@ export class AddEmployeeComponent {
     } catch (err) {
       console.log(err);
     }
-   
+    this.getEmployees()
   }
 
   addValid(){
@@ -51,6 +51,7 @@ export class AddEmployeeComponent {
       'success'
     )
     this.router.navigateByUrl('')
+    this.getEmployees()
   }
 
   getEmployees(){
