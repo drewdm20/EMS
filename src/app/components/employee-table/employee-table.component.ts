@@ -12,7 +12,7 @@ export class EmployeeTableComponent implements OnInit{
 
   constructor(private service: EmployeeService) { }
 
-  EMP: employeeId[] | undefined;
+  EMP!: employeeId[];
   public searchString: any;
   bool = true
 
@@ -22,7 +22,7 @@ export class EmployeeTableComponent implements OnInit{
   }
 
   getEmployees(){
-    this.EMP = [];
+    
     this.service.getData().subscribe(data=>{
       this.EMP = data;
       if(this.EMP.length == 0){
@@ -62,6 +62,11 @@ export class EmployeeTableComponent implements OnInit{
 
       }
     })
+  }
+
+  deleteSoft(id:any){
+      this.EMP = this.EMP.filter(item => item.empId !== id);
+      console.log(this.EMP)
   }
 
   setId(id:any){

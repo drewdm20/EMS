@@ -17,6 +17,7 @@ export class UpdateComponent {
 
   constructor(private service: EmployeeService, private router : Router  ) { }
 
+  employeeNumber! : String
   name! : String
   lastName! : String
   cellNumber! : String
@@ -31,9 +32,10 @@ export class UpdateComponent {
   }
 
   updateForm = new FormGroup({
+    employeeNumber: new FormControl(this.name, Validators.required),
     empName: new FormControl(this.name, Validators.required),
     empLastName: new FormControl(this.lastName, Validators.required),
-    cellNumber: new FormControl(this.cellNumber, Validators.required),
+    cellNumber: new FormControl(this.cellNumber, [Validators.required, Validators.maxLength(10)]),
     email: new FormControl(this.email, [Validators.required, Validators.email]),
     role: new FormControl(this.role, Validators.required),
     salary: new FormControl(this.salary, Validators.required),
@@ -57,6 +59,7 @@ export class UpdateComponent {
   getData(){
     this.service.getIData(this.ID).subscribe((data:any)=>{
       console.log(data)
+      this.employeeNumber = data.employeeNumber
       this.name = data.empName ;
       this.lastName = data.empLastName;
       this.cellNumber = data.cellNumber;

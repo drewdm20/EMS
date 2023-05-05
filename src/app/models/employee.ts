@@ -1,4 +1,5 @@
 export class employee {
+    employeeNumber! : Number
     empName! : String;
     empLastName! : String;
     cellNumber! : String;

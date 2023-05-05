@@ -5,6 +5,9 @@
       </h1>
      <div class="card-body">       
       <form [formGroup]="updateForm">
+        <label>Employee Number</label><br>
+        <input formControlName="employeeNumber" type="text" name="employeeNumber" [(ngModel)]="employeeNumber" required value="{{this.employeeNumber}}"><br><br>
+
         <label>Name</label><br>
         <input formControlName="empName" type="text" name="Name" [(ngModel)]="name" required value="{{this.name}}"><br><br>
 
@@ -24,8 +27,8 @@
         <input formControlName="salary" type="number" name="salary" [(ngModel)]="salary" required value="{{this.salary}}" min="0"><br><br>
 
       </form><br>
-      <button class="btn" type="submit" id="update" (click)="update()" [disabled]="!updateForm.valid">Update</button>
-      <button class="btn" type="submit" id="back" routerLink="/">Back</button>
+      <button class="btn" type="submit" id="update"  mat-raised-button (click)="update()" [disabled]="!updateForm.valid">Update</button>
+      <button class="btn" type="submit" id="back"  mat-raised-button routerLink="/">Back</button>
     </div>
 </div>
 </body>

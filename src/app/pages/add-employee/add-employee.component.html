@@ -1,9 +1,12 @@
 <body>
-    <h1 class="heading">
-        Add New Employee
-    </h1>
     <div class="card">
+        <h1 class="heading">
+            Add New Employee
+        </h1>
         <form [formGroup]="addForm" >
+            <label for="fname">Employee Number</label><br>
+            <input formControlName="employeeNumber" type="text" required id="fname" name="fname" ><br><br>
+
             <label for="fname">Name</label><br>
             <input formControlName="empName" type="text" required id="fname" name="fname" ><br><br>
 
@@ -24,6 +27,8 @@
 
             
         </form>
-        <button class="btn btn-primary" (click)="add()" [disabled]="!addForm.valid">Add</button>
+        <button class="btn"  mat-raised-button id="add" (click)="add()" [disabled]="!addForm.valid">Add</button>
     </div>
 </body>
+
+

@@ -18,3 +18,18 @@ input[type="search"] {
     padding: 30px;
 }
 
+
+#btn-details{
+    background-color: rgb(48, 89, 226);
+    color: white;
+}
+
+#btn-update{
+    background-color: rgb(128, 128, 128);
+    color: white;
+}
+
+#btn-delete{
+    background-color: rgb(241, 55, 55);
+    color: white;
+}

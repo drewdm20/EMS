@@ -10,7 +10,7 @@ body{
 
 .heading{
   padding: 3%;
-  font-size: 50px;
+  font-size: 40px;
   text-align: center;
   background-color: #6FB3B8;
 }
@@ -45,8 +45,14 @@ body{
     box-sizing: border-box;
   }
 
+
   #update{
+    background-color: #6FB3B8;
     margin-right: 3rem;
+  }
+
+  #back{
+    background-color: #6FB3B8;
   }
 
 

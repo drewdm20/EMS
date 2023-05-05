@@ -1,3 +1,4 @@
+import { employee } from 'src/app/models/employee';
 import { Component } from '@angular/core';
 import { EmployeeService } from 'src/app/Services/employee.service';
 
@@ -10,6 +11,7 @@ export class DetailsCardComponent {
 
   constructor(private service: EmployeeService, ) { }
 
+  employeeNumber! : Number
   name! : String
   lastName! : String
   cellNumber! : String
@@ -26,6 +28,7 @@ export class DetailsCardComponent {
   getData(){
     this.service.getIData(this.ID).subscribe((data:any)=>{
       console.log(data)
+      this.employeeNumber = data.employeeNumber
       this.name = data.empName ;
       this.lastName = data.empLastName;
       this.cellNumber = data.cellNumber;

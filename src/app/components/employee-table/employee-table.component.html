@@ -1,39 +1,51 @@
 <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="container">
 
-    <input class="form-control mr-sm-2 mb-3" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchString">
-
-    <div class="card">
-        <table class="table table-striped " *ngIf="this.bool == true">
-            <thead>
-            <tr>
-                <th scope="col">Employee ID</th>
-                <th scope="col">Name</th>
-                <th scope="col">Last Name</th>
-                <th scope="col">Role</th>
-                <th scope="col">Actions</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr *ngFor="let dataItem of EMP | filter: searchString">
-                <td>{{dataItem.empId}}</td>
-                <td>{{dataItem.empName}}</td>
-                <td>{{dataItem.empLastName}}</td>
-                <td>{{dataItem.role}}</td>
-                <td>
-                    <button type="submit" class="btn btn-primary mx-2" routerLink="details" (click)="setId(dataItem.empId)">Details</button>
-                    <button type="submit" class="btn btn-secondary mx-2" routerLink="update" (click)="setId(dataItem.empId)">Edit</button>
-                    <button type="submit" class="btn btn-danger mx-2" (click)="delete(dataItem.empId)">Delete</button>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="card" *ngIf="this.bool == false">
-        <div class="info">
-            <h2>No employees on the system</h2>
-        <p>Please add an employee</p>
+            <input class="form-control mr-sm-2 mb-3" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchString">
+        
+            <div class="card">
+                <table class="table table-striped " *ngIf="this.bool == true">
+                    <thead>
+                    <tr>
+                        <th scope="col">Employee Number</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Role</th>
+                        <th scope="col">Details</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let dataItem of EMP | filter: searchString">
+                        <td>{{dataItem.employeeNumber}}</td>
+                        <td>{{dataItem.empName}}</td>
+                        <td>{{dataItem.empLastName}}</td>
+                        <td>{{dataItem.role}}</td>
+                        <td>
+                            <button type="submit" class="btn" id="btn-details" mat-raised-button  routerLink="details" (click)="setId(dataItem.empId)"><mat-icon>view_agenda</mat-icon></button>
+                        </td>
+                        <td>
+                            <button type="submit" class="btn" id="btn-update" mat-raised-button routerLink="update" (click)="setId(dataItem.empId)"><mat-icon>update</mat-icon></button>
+                        </td>
+                        <td>
+                            <button type="submit" class="btn" id="btn-delete" mat-raised-button (click)="delete(dataItem.empId)"><mat-icon>delete_forever</mat-icon></button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        
+            <div class="card" *ngIf="this.bool == false">
+                <div class="info">
+                    <h2>No employees on the system</h2>
+                <p>Please add an employee</p>
+                </div>
+            </div>
+           
         </div>
+      </div>
     </div>
-   
 </div>

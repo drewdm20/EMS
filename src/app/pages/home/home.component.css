@@ -2,4 +2,16 @@
     min-height: 100vh;
     padding-top: 5%;
     overflow: scroll;
+    width: 100%;
 }
+
+@media only screen and (max-width: 320px) {
+    
+    .container{
+        min-height: 100vh;
+        padding-top: 35%;
+        overflow: scroll;
+        width: 100%;
+    }
+    
+  }
