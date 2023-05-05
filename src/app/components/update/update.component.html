@@ -21,7 +21,7 @@
         <input formControlName="role" type="text" name="role" [(ngModel)]="role" required value="{{this.role}}"><br><br>
 
         <label>Salary</label><br>
-        <input formControlName="salary" type="text" name="salary" [(ngModel)]="salary" required value="{{this.salary}}"><br><br>
+        <input formControlName="salary" type="text" name="salary" [(ngModel)]="salary" required value="{{this.salary}}" min="0"><br><br>
 
       </form><br>
       <button class="btn" type="submit" id="update" (click)="update()">Update</button>
