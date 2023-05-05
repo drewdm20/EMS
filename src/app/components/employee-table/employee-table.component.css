@@ -1,6 +1,7 @@
 table {
     margin: 4rem auto;
     width: 80%;
+    text-align: center;
 }
 
 input[type="search"] {
