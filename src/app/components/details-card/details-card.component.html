@@ -1,27 +1,33 @@
 <body>
-  <h1 class="heading">
-    Details
-  </h1>
   <div class="card">
-    <div class="card-body">
-      <label class="type" for="name">Name:</label>
-      <label class="info">{{this.name}}</label><br /><br />
-  
-      <label class="type" for="Lastname">Lastname:</label>
-      <label class="info">{{this.lastName}}</label><br /><br />
-  
-      <label class="type" for="cellphone">cellphone:</label>
-      <label class="info">{{this.cellNumber}}</label><br /><br />
-  
-      <label class="type" for="name">Email:</label>
-      <label class="info">{{this.email}}</label><br /><br />
-  
-      <label class="type" for="name">Role:</label>
-      <label class="info">{{this.role}}</label><br /><br />
-  
-      <label class="type" for="name">Salary:</label>
-      <label class="info">{{this.salary}}</label><br /><br />
-    </div>
+    <h1 class="heading">
+      Details
+    </h1><br>
+      <table class="table table-borderless ">
+        <tbody >
+        <tr>
+          <td><label for="name">Name:</label></td>
+          <td><label >{{this.name}}</label></td>
+        </tr>
+        <tr>
+          <td><label for="name">Last Name:</label></td>
+          <td><label >{{this.lastName}}</label></td>
+        </tr>
+        <tr>
+          <td><label for="name">Email:</label></td>
+          <td><label >{{this.email}}</label></td>
+        </tr>
+        <tr>
+          <td><label for="name">Role:</label></td>
+          <td><label >{{this.role}}</label></td>
+        </tr>
+        <tr>
+          <td><label for="name">Salary:</label></td>
+          <td><label >R{{this.salary}}</label></td>
+        </tr>
+        </tbody>
+      </table><br><br>
     <button class="btn btn-primary" routerLink="/">Back</button>
   </div>
+  
 </body>
